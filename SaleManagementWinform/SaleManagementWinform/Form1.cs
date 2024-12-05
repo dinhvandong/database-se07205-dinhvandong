@@ -30,7 +30,8 @@ namespace SaleManagementWinform
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            // Update new code gituhub 
+            // Test commit github
 
             string username = txb_username.Text;
             string password = txb_password.Text;
