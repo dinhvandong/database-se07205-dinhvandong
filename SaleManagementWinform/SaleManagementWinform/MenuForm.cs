@@ -25,6 +25,14 @@ namespace SaleManagementWinform
 
             // Optional: Set a fixed border style to prevent resizing
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
+
+            if(Utils.roleID ==1)
+            {
+
+                // id = 2 la SALE
+
+                button5.Visible = false;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -53,6 +61,11 @@ namespace SaleManagementWinform
             EmployeeForm empForm = new EmployeeForm();
             empForm.Show();
             this.Hide();
+
+        }
+
+        private void MenuForm_Load(object sender, EventArgs e)
+        {
 
         }
     }

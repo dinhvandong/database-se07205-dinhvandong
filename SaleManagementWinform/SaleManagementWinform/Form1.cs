@@ -59,11 +59,9 @@ namespace SaleManagementWinform
 
 
         }
-
-
         private bool CheckLogin(string username, string hashedPassword)
         {
-            string query = "SELECT password FROM Employee WHERE username = @username";
+            string query = "SELECT password, roleId FROM Employee WHERE username = @username";
 
             using (SqlConnection connection = new SqlConnection(Connection.SQLConnection))
             {
@@ -73,12 +71,18 @@ namespace SaleManagementWinform
                 try
                 {
                     connection.Open();
-                    object result = command.ExecuteScalar();
-
-                    if (result != null)
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        string storedHash = result.ToString(); // Retrieved hashed password
-                        return storedHash == hashedPassword;  // Compare the hashes
+                        if (reader.Read())
+                        {
+                            string storedHash = reader["password"].ToString(); // Retrieved hashed password
+                            int roleId = Convert.ToInt32(reader["roleId"]); // Retrieved roleId
+
+
+                            Utils.roleID = roleId; // Assign the roleId to your global variable or utility class
+
+                            return storedHash == hashedPassword; // Compare the hashes
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -89,5 +93,37 @@ namespace SaleManagementWinform
 
             return false; // Return false if username not found or any error occurs
         }
+
+
+        /* private bool CheckLogin(string username, string hashedPassword)
+         {
+             string query = "SELECT password FROM Employee WHERE username = @username";
+
+
+             //Utils.roleID = id_get_from_database
+             using (SqlConnection connection = new SqlConnection(Connection.SQLConnection))
+             {
+                 SqlCommand command = new SqlCommand(query, connection);
+                 command.Parameters.AddWithValue("@username", username);
+
+                 try
+                 {
+                     connection.Open();
+                     object result = command.ExecuteScalar();
+
+                     if (result != null)
+                     {
+                         string storedHash = result.ToString(); // Retrieved hashed password
+                         return storedHash == hashedPassword;  // Compare the hashes
+                     }
+                 }
+                 catch (Exception ex)
+                 {
+                     MessageBox.Show($"An error occurred: {ex.Message}");
+                 }
+             }
+
+             return false; // Return false if username not found or any error occurs
+         }*/
     }
 }

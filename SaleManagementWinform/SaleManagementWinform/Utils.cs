@@ -9,6 +9,12 @@ namespace SaleManagementWinform
 {
     internal class Utils
     {
+
+
+        public static int roleID = 1;
+
+
+
         public static string HashPassword(string password)
         {
             using (SHA256 sha256 = SHA256.Create())
