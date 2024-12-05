@@ -31,7 +31,7 @@ namespace SaleManagementWinform
 
                 // id = 2 la SALE
 
-                button5.Visible = false;
+               // button5.Visible = false;
             }
         }
 
@@ -67,6 +67,13 @@ namespace SaleManagementWinform
         private void MenuForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PurchaseHistoryForm purchaseHistoryForm = new PurchaseHistoryForm();
+            purchaseHistoryForm.Show();
+            this.Hide();
         }
     }
 }

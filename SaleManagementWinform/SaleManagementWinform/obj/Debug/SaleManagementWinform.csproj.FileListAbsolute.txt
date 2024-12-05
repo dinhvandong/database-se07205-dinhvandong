@@ -36,3 +36,5 @@ C:\FPT\2024 FALL\github-database\database-se07205-dinhvandong\SaleManagementWinf
 C:\FPT\2024 FALL\github-database\database-se07205-dinhvandong\SaleManagementWinform\SaleManagementWinform\obj\Debug\SaleManagementWinform.csproj.CoreCompileInputs.cache
 C:\FPT\2024 FALL\github-database\database-se07205-dinhvandong\SaleManagementWinform\SaleManagementWinform\obj\Debug\SaleManagementWinform.exe
 C:\FPT\2024 FALL\github-database\database-se07205-dinhvandong\SaleManagementWinform\SaleManagementWinform\obj\Debug\SaleManagementWinform.pdb
+C:\FPT\2024 FALL\github-database\database-se07205-dinhvandong\SaleManagementWinform\SaleManagementWinform\obj\Debug\SaleManagementWinform.PurchaseHistoryForm.resources
+C:\FPT\2024 FALL\github-database\database-se07205-dinhvandong\SaleManagementWinform\SaleManagementWinform\obj\Debug\SaleManagementWinform.AddPurchaseHistory.resources

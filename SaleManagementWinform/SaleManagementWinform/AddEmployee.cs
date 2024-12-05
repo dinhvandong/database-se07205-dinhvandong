@@ -43,7 +43,7 @@ namespace SaleManagementWinform
             string username = tbx_username.Text;
             string password = tbx_password.Text;
 
-            string hashPassword = HashPassword(password);
+            string hashPassword = Utils.HashPassword(password);
             string position = tbx_position.Text;
 
             int roleID = 2;
@@ -61,7 +61,8 @@ namespace SaleManagementWinform
             // Connection string to your database
 
             // SQL query to insert data
-            string query = "INSERT INTO Employee (code, name, position, username, password, active) VALUES (@code, @name, @position, @username, @password, 1)";
+            string query = "INSERT INTO Employee " +
+                "(code, name, position, username, password, active, roleId) VALUES (@code, @name, @position, @username, @password, 1, @roleId)";
 
             using (SqlConnection connection = new SqlConnection(Connection.SQLConnection))
             {
